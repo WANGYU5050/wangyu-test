@@ -1,10 +1,11 @@
 ####################################
 # 创建者：v2rayse.com
-# 客户端：Clash
-# 创建时间：2024-12-29 22:21:24
+# 客户端：Clash.Meta
+# 创建时间：2025-01-02 12:08:26
 # 使用模版：ACL4SSR.ini
 # 节点数量：10
-# 节点类型：ss, trojan
+# 节点类型：vless, trojan, ss, vmess
+# !!当前配置文件请使用基于 Clash.Meta 内核程序
 ####################################
 mixed-port: 7890
 allow-lan: true
@@ -86,16 +87,16 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"🇺🇸_US_美国_1","type":"ss","server":"34.219.80.203","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"🇺🇸_US_美国_2","type":"ss","server":"35.161.59.194","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"🇷🇺_RU_俄罗斯_1","type":"ss","server":"217.30.10.18","port":9001,"password":"UkXRsXvR6buDMG2Y","cipher":"aes-256-cfb"}
-  - {"name":"🇫🇷_FR_法国","type":"trojan","server":"35.181.10.222","port":22222,"password":"telegram-id-privatevpns","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇮🇷_IR_伊朗->🇹🇷_TR_土耳其","type":"ss","server":"85.133.241.75","port":1935,"password":"21586aab-3a37-4f55-b8b7-5ae69572d403","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇷🇴_RO_罗马尼亚","type":"ss","server":"194.5.215.59","port":8080,"password":"14fFPrbezE3HDZzsMOr6","cipher":"rc4-md5"}
-  - {"name":"🇷🇺_RU_俄罗斯_2","type":"ss","server":"217.30.10.18","port":9006,"password":"FAdUvMJUq5vDgKEq","cipher":"aes-256-cfb"}
-  - {"name":"🇷🇺_RU_俄罗斯_3","type":"ss","server":"217.30.10.18","port":9006,"password":"FAdUvMJUq5vDgKEq","cipher":"aes-256-cfb"}
-  - {"name":"🇦🇱_AL_阿尔巴尼亚","type":"ss","server":"109.104.154.4","port":5555,"password":"2kZMZNoI2sgKPb6C-9IQ8w","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇷🇺_RU_俄罗斯_4","type":"ss","server":"217.30.10.18","port":9026,"password":"QWDDvVE9npNurQfA","cipher":"aes-256-cfb"}
+  - {"name":"🇺🇸_US_美国_1","type":"vless","server":"151.101.194.219","port":80,"uuid":"5ef5674b-49b9-53eb-9d91-646fe24c34ef","network":"ws","ws-opts":{"headers":{"host":"MO-SI-V2.COM"}}}
+  - {"name":"🇺🇸_US_美国_2","type":"vless","server":"171.22.125.186","port":2198,"uuid":"838f5273-5d2d-4630-a0f5-9cc8e4aef4d6","network":"tcp"}
+  - {"name":"🇬🇧_GB_英国->🇺🇸_US_美国","type":"trojan","server":"51.24.17.127","port":22222,"password":"telegram-id-directvpn","sni":"trojan.burgerip.co.uk"}
+  - {"name":"🇷🇺_RU_俄罗斯_1","type":"ss","server":"217.30.10.18","port":9040,"password":"p9z5BVADH2YFs3MN","cipher":"aes-256-cfb"}
+  - {"name":"🇳🇱_NL_荷兰->🇺🇸_US_美国","type":"vmess","server":"45.131.7.242","port":8080,"cipher":"auto","uuid":"2a4fa40f-97f4-4ea9-b959-b148c4197d15","alterId":0,"sni":"","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/2a4fa40f","headers":{"host":"luodi.davesuen.store"}}}
+  - {"name":"🇷🇺_RU_俄罗斯_2","type":"ss","server":"217.30.10.18","port":9033,"password":"UTJA57ypk2XKQpnm","cipher":"aes-256-cfb"}
+  - {"name":"🇺🇸_US_美国_3","type":"vless","server":"151.101.194.219","port":80,"uuid":"5ef5674b-49b9-53eb-9d91-646fe24c34ef","network":"ws","ws-opts":{"headers":{"host":"MO-SI-V2.COM"}}}
+  - {"name":"🇷🇺_RU_俄罗斯_3","type":"ss","server":"217.30.10.18","port":9084,"password":"c3NtHJ5ujV2tGDfj","cipher":"aes-256-cfb"}
+  - {"name":"🇨🇳_CN_中国->🇷🇺_RU_俄罗斯","type":"vmess","server":"cm1.awslcn.info","port":25230,"cipher":"auto","uuid":"243eab52-9ac1-405c-887c-eb112c0985b8","alterId":0,"sni":"","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"cm1.awslcn.info"}}}
+  - {"name":"🇺🇸_US_美国->🇩🇪_DE_德国","type":"vmess","server":"151.101.192.155","port":80,"cipher":"auto","uuid":"8c036bb6-2f9d-4501-a8ee-78c4ebc30e33","alterId":0,"network":"ws","ws-opts":{"path":"/?ed=80/#id-telegram:-->@vpn_whal<---","headers":{"host":"banknabi-mahdi313.IR."}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -104,14 +105,14 @@ proxy-groups:
       - DIRECT
       - 🇺🇸_US_美国_1
       - 🇺🇸_US_美国_2
+      - 🇬🇧_GB_英国->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_1
-      - 🇫🇷_FR_法国
-      - 🇮🇷_IR_伊朗->🇹🇷_TR_土耳其
-      - 🇷🇴_RO_罗马尼亚
+      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_2
+      - 🇺🇸_US_美国_3
       - 🇷🇺_RU_俄罗斯_3
-      - 🇦🇱_AL_阿尔巴尼亚
-      - 🇷🇺_RU_俄罗斯_4
+      - 🇨🇳_CN_中国->🇷🇺_RU_俄罗斯
+      - 🇺🇸_US_美国->🇩🇪_DE_德国
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -120,14 +121,14 @@ proxy-groups:
     proxies:
       - 🇺🇸_US_美国_1
       - 🇺🇸_US_美国_2
+      - 🇬🇧_GB_英国->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_1
-      - 🇫🇷_FR_法国
-      - 🇮🇷_IR_伊朗->🇹🇷_TR_土耳其
-      - 🇷🇴_RO_罗马尼亚
+      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_2
+      - 🇺🇸_US_美国_3
       - 🇷🇺_RU_俄罗斯_3
-      - 🇦🇱_AL_阿尔巴尼亚
-      - 🇷🇺_RU_俄罗斯_4
+      - 🇨🇳_CN_中国->🇷🇺_RU_俄罗斯
+      - 🇺🇸_US_美国->🇩🇪_DE_德国
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -136,14 +137,14 @@ proxy-groups:
       - 🎯 全球直连
       - 🇺🇸_US_美国_1
       - 🇺🇸_US_美国_2
+      - 🇬🇧_GB_英国->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_1
-      - 🇫🇷_FR_法国
-      - 🇮🇷_IR_伊朗->🇹🇷_TR_土耳其
-      - 🇷🇴_RO_罗马尼亚
+      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_2
+      - 🇺🇸_US_美国_3
       - 🇷🇺_RU_俄罗斯_3
-      - 🇦🇱_AL_阿尔巴尼亚
-      - 🇷🇺_RU_俄罗斯_4
+      - 🇨🇳_CN_中国->🇷🇺_RU_俄罗斯
+      - 🇺🇸_US_美国->🇩🇪_DE_德国
   - name: 📲 电报信息
     type: select
     proxies:
@@ -151,14 +152,14 @@ proxy-groups:
       - 🎯 全球直连
       - 🇺🇸_US_美国_1
       - 🇺🇸_US_美国_2
+      - 🇬🇧_GB_英国->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_1
-      - 🇫🇷_FR_法国
-      - 🇮🇷_IR_伊朗->🇹🇷_TR_土耳其
-      - 🇷🇴_RO_罗马尼亚
+      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_2
+      - 🇺🇸_US_美国_3
       - 🇷🇺_RU_俄罗斯_3
-      - 🇦🇱_AL_阿尔巴尼亚
-      - 🇷🇺_RU_俄罗斯_4
+      - 🇨🇳_CN_中国->🇷🇺_RU_俄罗斯
+      - 🇺🇸_US_美国->🇩🇪_DE_德国
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -166,14 +167,14 @@ proxy-groups:
       - 🚀 节点选择
       - 🇺🇸_US_美国_1
       - 🇺🇸_US_美国_2
+      - 🇬🇧_GB_英国->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_1
-      - 🇫🇷_FR_法国
-      - 🇮🇷_IR_伊朗->🇹🇷_TR_土耳其
-      - 🇷🇴_RO_罗马尼亚
+      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_2
+      - 🇺🇸_US_美国_3
       - 🇷🇺_RU_俄罗斯_3
-      - 🇦🇱_AL_阿尔巴尼亚
-      - 🇷🇺_RU_俄罗斯_4
+      - 🇨🇳_CN_中国->🇷🇺_RU_俄罗斯
+      - 🇺🇸_US_美国->🇩🇪_DE_德国
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -181,14 +182,14 @@ proxy-groups:
       - 🎯 全球直连
       - 🇺🇸_US_美国_1
       - 🇺🇸_US_美国_2
+      - 🇬🇧_GB_英国->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_1
-      - 🇫🇷_FR_法国
-      - 🇮🇷_IR_伊朗->🇹🇷_TR_土耳其
-      - 🇷🇴_RO_罗马尼亚
+      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_2
+      - 🇺🇸_US_美国_3
       - 🇷🇺_RU_俄罗斯_3
-      - 🇦🇱_AL_阿尔巴尼亚
-      - 🇷🇺_RU_俄罗斯_4
+      - 🇨🇳_CN_中国->🇷🇺_RU_俄罗斯
+      - 🇺🇸_US_美国->🇩🇪_DE_德国
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -213,14 +214,14 @@ proxy-groups:
       - ♻️ 自动选择
       - 🇺🇸_US_美国_1
       - 🇺🇸_US_美国_2
+      - 🇬🇧_GB_英国->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_1
-      - 🇫🇷_FR_法国
-      - 🇮🇷_IR_伊朗->🇹🇷_TR_土耳其
-      - 🇷🇴_RO_罗马尼亚
+      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
       - 🇷🇺_RU_俄罗斯_2
+      - 🇺🇸_US_美国_3
       - 🇷🇺_RU_俄罗斯_3
-      - 🇦🇱_AL_阿尔巴尼亚
-      - 🇷🇺_RU_俄罗斯_4
+      - 🇨🇳_CN_中国->🇷🇺_RU_俄罗斯
+      - 🇺🇸_US_美国->🇩🇪_DE_德国
 
 rules:
 # 本地/局域网地址
